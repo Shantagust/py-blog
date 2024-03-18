@@ -1,0 +1,13 @@
+{% if object %}
+  <form>
+    {% csrf_token %}
+    <div class="card-body">
+      <h4 class="card-title">Add comment</h4>
+      <div class="form-group">
+        <label>
+          <textarea class="form-control" rows="3" placeholder="Put your comment here..."></textarea>
+        </label>
+      </div>
+    </div>
+  </form>
+{% endif %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title> blog list </title>
+{% endblock %}
+
+{% block content %}
+  {% if post_list %}
+    {% for post in post_list %}
+      <h2>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+      </h2>
+      <p>{{ post.content }}</p>
+      <div style="text-align: end">
+        {{ post.created_time }}<br>
+        author: {{ post.owner.username }}, Comments: {{ post.content.count }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endblock %}
